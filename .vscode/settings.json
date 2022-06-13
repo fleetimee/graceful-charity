@@ -1,0 +1,19 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.dart_tool": true,
+    ".dart_tool": true,
+    "**/.idea": true,
+    ".idea": true,
+    "**/.vscode": true,
+    ".vscode": true,
+    "**/.gitignore": true,
+    ".gitignore": true
+  },
+  "explorerExclude.backup": null
+}
