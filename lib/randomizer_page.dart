@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -21,16 +20,23 @@ class _RandomizerPageState extends State<RandomizerPage> {
   Widget build(BuildContext context) {
     widget.min;
     return Scaffold(
-        appBar: AppBar(title: Text('Randomizer')),
-        body: Center(
-          child: Text(
-            _generatedNumber?.toString() ?? 'Generate a Number',
-            style: TextStyle(fontSize: 42),
-          ),
-        )
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {}
+      appBar: AppBar(title: Text('Randomizer')),
+      body: Center(
+        child: Text(
+          _generatedNumber?.toString() ?? 'Generate a Number',
+          style: TextStyle(fontSize: 42),
         ),
-        );
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        label: Text('Generate'),
+        onPressed: () {
+          setState(() {
+            _generatedNumber = widget.min +
+                randomGenerator.nextInt(widget.max + 1 - widget.min);
+          });
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
   }
 }
